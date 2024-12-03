@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                 name="Ivo Sam - Writing Samples"
+                 start-page="About-Me.md">
+
+    <toc-element topic="About-Me.md"/>
+    <toc-element topic="Sample-1.md"/>
+    <toc-element topic="Sample-2.md"/>
+    <toc-element topic="Sample-3-Instructions.md"/>
+    <toc-element topic="Live-documentation-user.md"/>
+    <toc-element topic="Live-documentation-SDK.md"/>
+</instance-profile>
