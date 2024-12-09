@@ -1,0 +1,69 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-12-03T15:07:36.080228"><title>Sample 1: Method reference - findNeedles | Ivo Sam - Writing Samples</title><script type="application/json" id="virtual-toc-data">[{"id":"syntax","level":0,"title":"Syntax","anchor":"#syntax"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b518/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Sample 1: Method reference - findNeedles | Ivo Sam - Writing Samples"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Ivo Sam - Writing Samples Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/sample-1.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Sample 1: Method reference - findNeedles | Ivo Sam - Writing Samples"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/sample-1.html#webpage",
+    "url": "writerside-documentation/sample-1.html",
+    "name": "Sample 1: Method reference - findNeedles | Ivo Sam - Writing Samples",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Ivo Sam - Writing Samples Help"
+}</script><!-- End Schema.org --></head><body data-id="Sample-1" data-main-title="Sample 1: Method reference - findNeedles" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs=""><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Ivo Sam - Writing Samples  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="Sample-1" id="Sample-1.md">Sample 1: Method reference - findNeedles</h1><p id="-phds3c_3">This is a reference document for the <code class="code" id="-phds3c_5">findNeedles</code> method. This method finds a set of words inside a string, and displays how many times finds a match for each word.</p><section class="chapter"><h2 id="syntax" data-toc="syntax">Syntax</h2><p id="-phds3c_6">The following code sample represents a <span class="emphasis" id="-phds3c_12">find needles in haystack method</span> written in <span class="control" id="-phds3c_13">Java</span>:</p><div class="code-block" data-lang="java">
+public static void findNeedles(String haystack, String[] needles) {
+	if (needles.length &gt; 5) {
+		System.err.println(&quot;Too many words!&quot;);
+	} else {
+		int[] countArray = new int[needles.length];
+		for (int i = 0; i&lt;needles.length; i++) {
+			String[] words = haystack.split(&quot;[ \&quot;\'\t\n\b\f\r]&quot;, 0);
+			for (int j = 0; j&lt;words.length; j++) {
+				if (words[j].compareTo(needles[i]) == 0) {
+					countArray[i]++;
+				}
+			}
+		}
+		for (int j = 0; j&lt;needles.length; j++) {
+			System.out.println(needles[j] + &quot;: &quot; + countArray[j]);
+		}
+	}
+}
+</div><section class="chapter"><h3 id="parameters" data-toc="parameters">Parameters</h3><p id="-phds3c_14">The method receives two parameters:</p><div class="code-block" data-lang="java">
+public static void findNeedles(String haystack, String[] needles)
+</div><ul class="list _bullet" id="-phds3c_16"><li class="list__item" id="-phds3c_17"><p><code class="code" id="-phds3c_19">haystack</code>: the string containing the available words</p></li><li class="list__item" id="-phds3c_18"><p><code class="code" id="-phds3c_20">needles</code>: the words to find in the haystack</p></li></ul></section><section class="chapter"><h3 id="execution-condition" data-toc="execution-condition">Execution condition</h3><p id="-phds3c_21">This method only works for a set of <span class="emphasis" id="-phds3c_23"><span class="control" id="-phds3c_26">maximum</span></span> <span class="emphasis" id="-phds3c_24">five words</span>. If the <code class="code" id="-phds3c_25">needles</code> array contains more than five elements, an error message is displayed.</p><div class="code-block" data-lang="java">
+if (needles.length &gt; 5) {
+		System.err.println(&quot;Too many words!&quot;);
+</div></section><section class="chapter"><h3 id="haystack-split-and-word-comparison" data-toc="haystack-split-and-word-comparison">Haystack split and word comparison</h3><p id="-phds3c_27">If the <code class="code" id="-phds3c_38">needles</code> array contains five elements or less, creates an array to store the count of each word in <code class="code" id="-phds3c_39">needles</code>.</p><div class="code-block" data-lang="java">
+else {
+		int[] countArray = new int[needles.length];
+</div><p id="-phds3c_29">The following <code class="code" id="-phds3c_40">for</code> loop separates the <code class="code" id="-phds3c_41">haystack</code> string into single words using the <code class="code" id="-phds3c_42">split</code> Java method and stores them in a new array of strings called <code class="code" id="-phds3c_43">words</code>.</p><div class="code-block" data-lang="java">
+for (int i = 0; i&lt;needles.length; i++) {
+	String[] words = haystack.split(&quot;[ \&quot;\'\t\n\b\f\r]&quot;, 0);
+	for (int j = 0; j&lt;words.length; j++) {
+		if (words[j].compareTo(needles[i]) == 0) {
+			countArray[i]++;
+		}
+	}
+}
+</div><p id="-phds3c_31">The <code class="code" id="-phds3c_44">split</code> method takes two arguments: a <span class="emphasis" id="-phds3c_45">regular expression</span> and a <span class="emphasis" id="-phds3c_46">limit</span>. In this case:</p><ul class="list _bullet" id="-phds3c_32"><li class="list__item" id="-phds3c_47"><p><code class="code" id="-phds3c_49">&quot;[\&quot;\'\t\n\b\f\r]&quot;</code>: This regular expression separates words from the text when it finds <span class="control" id="-phds3c_50">double quotes</span>, <span class="control" id="-phds3c_51">single quotes</span>, <span class="control" id="-phds3c_52">tabs</span>, <span class="control" id="-phds3c_53">blank spaces</span>, and <span class="control" id="-phds3c_54">line breaks</span>.</p></li><li class="list__item" id="-phds3c_48"><p><code class="code" id="-phds3c_55">0</code>: The <code class="code" id="-phds3c_56">0</code> limit means that splitting will happen as many times as needed.</p></li></ul><p id="-phds3c_33"><span class="control" id="-phds3c_57">Note:</span> To know more about the <code class="code" id="-phds3c_58">split</code> method, visit the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#split" id="-phds3c_59" data-external="true" rel="noopener noreferrer">String Class documentation</a> and navigate to the <span class="control" id="-phds3c_60">split</span> section.</p><p id="-phds3c_34">The inner <code class="code" id="-phds3c_61">for</code> loop compares, using the <code class="code" id="-phds3c_62">compareTo</code> Java method, each string of the <code class="code" id="-phds3c_63">words</code> array with the word in the current position of the <code class="code" id="-phds3c_64">needles</code> array.</p><div class="code-block" data-lang="java">
+for (int j = 0; j&lt;words.length; j++) {
+		if (words[j].compareTo(needles[i]) == 0) {
+			countArray[i]++;
+		}
+	}
+}
+</div><p id="-phds3c_36">For each comparison, the code checks if the <code class="code" id="-phds3c_65">compareTo</code> method returned a <code class="code" id="-phds3c_66">0</code>, indicating a match between both words. If there is a match, it increases the counter for that word.</p><p id="-phds3c_37"><span class="control" id="-phds3c_67">Note:</span> To know more about the <code class="code" id="-phds3c_68">compareTo</code> method, visit the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html" id="-phds3c_69" data-external="true" rel="noopener noreferrer">Comparable documentation</a>.</p></section><section class="chapter"><h3 id="calling-the-method-and-displaying-the-output" data-toc="calling-the-method-and-displaying-the-output">Calling the method and displaying the output</h3><p id="-phds3c_70">Calling the method returns each word in <code class="code" id="-phds3c_75">needles</code> and the number of times that it was found inside the <code class="code" id="-phds3c_76">haystack</code> string.</p><p id="-phds3c_71">Here is an example of calling the method:</p><div class="code-block" data-lang="java">
+String[] needles = new String[]{&quot;hello&quot;,&quot;hollo&quot;,&quot;hullo&quot;, &quot;hillo&quot;, &quot;hallo&quot;};
+    
+findNeedles(&quot;hello\'hello\thello\bwhole'\nhullo'hullo hillo&quot;, needles);
+</div><p id="-phds3c_73">Which returns the following:</p><div class="code-block" data-lang="bash">
+hello: 3
+hollo: 0
+hullo: 2
+hillo: 1
+hallo: 0
+</div></section></section><div class="last-modified">Last modified: 03 December 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="about-me.html" class="navigation-links__prev">About Me</a><a href="sample-2.html" class="navigation-links__next">Sample 2: Concepts</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b518/app.js"></script></body></html>
